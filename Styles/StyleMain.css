@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+body {
+    background-color: #fff4fd;
+}
+
+.header {
+    height: 23px;
+    max-width: auto;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: 0 1px 0 0 #110038;
+}
+
+h1 {
+    font-family: 'Chakra Petch-Regular';
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    padding: 3px 7px 4px;
+}
+
+.barra_navegacion_principal-con_botones {
+    /*max-width: 1200px;*/
+    /*width: calc(100% - 32px);*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 44px;
+    margin-bottom: 36px;
+    padding-left: 60px;
+    padding-right: 60px;
+
+}
+
+.boton_retorno_pantalla_principal {
+    display: none;
+}
+
+.tres_botones_navegación {
+    display: flex;
+    height: 36px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.crear_gifos {
+    margin-right: 16px;
+    padding: 0px 35px 0px 35px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.boton_temas-y-dropdown {
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: auto;
+
+}
+
+.texto_boton_elegir_tema {
+    padding: 0px 25px 0px 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.formato_boton {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.fuente_boton {
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+}
+
+.icono_dropdown {
+    height: 36px;
+    width: 36px;
+    justify-content: center;
+    display: flex;
+    border-top: 1px solid #110038;
+    border-right: none;
+    border-bottom: 1px solid #110038;
+    border-left: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.lista_desplegable_temas {
+    display: none;
+    width: auto ;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    top: 112px;
+    cursor: default;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.dia {
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
+    width: 151px;
+    height: 36px;
+    background: #FFF4FD;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+
+}
+
+.noche {
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    margin-top: 10px;
+    width: 151px;
+    height: 36px;
+}
+
+.mis-gifos {
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 18px;
+    background-color: transparent;
+    margin: 0 0 0 12px;
+    border: 0px;
+    padding: 4px 4px 4px 4px;
+    cursor: pointer;
+}
+
+.seccion_barra_busqueda {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.contenedor_barra_busqueda {
+    padding: 3px 3px 3px 3px;
+    width: 100%;
+    z-index: 0;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    
+}
+
+.titulo_buscar {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+    font-family: "Chakra Petch", sans-serif;
+
+}
+
+.titulo_buscar h2 {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.entrada_texto {
+    padding: 13px 16px 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.entrada_texto input{
+    width: 90%;
+    padding: 6px 16px 6px 16px;
+    font-size: 16px;
+    color: #B4B4B4;
+    letter-spacing: 0;
+    line-height: 22px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.boton_buscar {
+    cursor: pointer;
+    width: 102px;
+    height: 36px;
+    font-size: 16px;
+    color: #B4B4B4;
+    letter-spacing: 0;
+    line-height: 18px;
+    background: #E6E6E6;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.entrada_texto input button .lupita {
+    width: 16px;
+    height: 16px;
+    margin: 0px 0px 0px 0px;
+}
+
+.contHistorial {
+    display: none;
+    margin-top: 10px;
+}
+
+.textoHistorial {
+    margin-right: 8px;
+    margin-top: 10px;
+    height: 34px;
+    width: 150px;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    padding: 8px 7px 8px 7px;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.lista_sugerencia_busqueda_escondida {
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.contenedor_sugerencia_busqueda {
+    display: none;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    padding: 16px 16px 0px 16px;
+}
+
+.sugerencia_busqueda {
+    height: 34px;
+    width: 90%;
+    padding: 7px 16px 7px 16px;
+    margin-bottom: 16px;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.sugerencias_gif, .cont_total_tendencias {
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 64px;
+
+}
+
+.hoy_te_sugerimos, .tendencias {
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+    
+}
+
+.contHover{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 288px;
+}
+
+.divHover {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    width: auto;
+    height: 20px;
+    transform: translate(0px, -20px);
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+h4 {
+    padding: 7px 7px 7px 7px;
+    font-size: 14px;
+    color: #110038;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+
+.vermas {
+    cursor: pointer;
+    position: relative;
+    top: -50px;
+    left: -85px;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    height: 34px;
+    width: 81px;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+
+}
+/*Estilado para gifs de sugerencias.*/
+.grilla_gifs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+
+.cont_total_gif {
+    height: 313px;
+    width: 288px;
+    background: #E6E6E6;
+    /*box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;*/
+}
+
+.cont_titulo_gif {
+    padding: 3px 4px 3px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 24px;
+    width: 100%;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.cont_titulo_gif h2 {
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.cont_gif {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont_gif .cambio {
+    width: 284px;
+    height: 286px ;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+
+/*Estilado de la sección Tendencias*/
+.cont_grilla_gifsTendencias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.imagen_tendencias {
+    height: 298px;
+    width: 288px;
+    margin-top: 16px;
+}

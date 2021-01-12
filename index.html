@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvarez Nicolas GifOS</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <!--StyleSheets-->
+    <link rel="stylesheet" href="Styles/StyleMain.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h1>
+    </header>
+
+<!--Barra de navegación de la pantalla principal, con botón retorno escondido, logo y botones de navegación.-->
+    <nav class="barra_navegacion_principal-con_botones">
+        <div class="logo_botonhome">
+            <img id="logo" src="Assets/gifOF_logo.png" alt="Hubo un problema al cargar la imagen">
+        </div>
+        
+        <div class="tres_botones_navegación">
+            <button class="crear_gifos letra_botones formato_boton">
+                <span class="texto_boton_creargifos fuente_boton" onclick="location.href='http://127.0.0.1:5500/GifOS.html'">Crear Guifos</span>
+            </button>
+<!--Boton selección de temas--> 
+            <div class="boton_temas-y-dropdown formato_boton">
+                <span class="texto_boton_elegir_tema fuente_boton" onclick="displayBlockTemas()">Elegir Tema</span>
+                    
+                <span class="icono_dropdown fuente_boton" onclick="displayBlockTemas()"><img src="Assets/dropdown.svg" alt=""></span>
+                <div id="listaTemas" class="lista_desplegable_temas escondida">
+                    <button class="dia" onclick="temaDia()">Día</button>
+                    <button class="noche" onclick="temaNoche()">Noche</button>
+                </div>
+            </div>
+            
+            <button id="nocheCrear" class="mis-gifos" onclick="location.href = 'http://127.0.0.1:5500/GifOS.html'" >Mis Guifos</button>
+        </div>
+    </nav>
+    <!--Acá comienza el resto del html. Un main como contenedor general de la estructura.-->
+    <main class="contenedor_total"> 
+        <section class="seccion_barra_busqueda"> <!--Barra de búsqueda-->
+            <div class="contenedor_barra_busqueda">
+                <div class="titulo_buscar">
+                    <h2>Buscar</h2>
+                </div>
+                <div class="entrada_texto">
+                    <input id="ingreso_text_busqueda" type="text" onkeydown="detectaInput()" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <button id="boton_buscar" class="boton_buscar" onclick="busqueda_gif()">
+                        <img id="lupa" class="lupita" src="Assets/lupa_inactive.svg" alt=""> Buscar 
+                    </button>
+                </div>
+            </div>
+            <div class="contHistorial" id="historial">
+            </div>
+        </section>
+
+        <section class="lista_sugerencia_busqueda_escondida"><!--Esta es la lista desplegable que aparece cuando se ingresa un texto en la búsqueda.-->
+            <div id="lista_suegercia" class="contenedor_sugerencia_busqueda">
+                <button class="sugerencia_busqueda btn" onclick="salidaBoton(this)"></button>
+                <button class="sugerencia_busqueda btn" onclick="salidaBoton(this)"></button>
+                <button class="sugerencia_busqueda btn" onclick="salidaBoton(this)"></button>
+                <button class="sugerencia_busqueda btn" onclick="salidaBoton(this)"></button>
+            </div>
+        </section>
+
+        <section id="seccion_sugerencia" class="sugerencias_gif"> <!--Sección con cuadro de texto "hoy te sugerimos + linea de 4 gifs, sujerencia-->
+            <div class="hoy_te_sugerimos">
+                <h4>Hoy te sugerimos:</h4>
+            </div>
+
+            <div class="grilla_gifs"> <!--Acá arranca la grilla de 4 gifs para las sugerencias-->
+                <div class="cont_total_gif">
+                    <div class="cont_titulo_gif">
+                        <h2 class="tirulo_gif_sugerencia"></h2>
+                        <img src="Assets/close.svg" alt="">
+                    </div>
+                    <div class="cont_gif">
+                        <img class="cambio" src="#" alt="">
+                        <button onclick="location.href = 'https://giphy.com'" class="vermas" formtarget="_blank">Ver más</button>  
+                    </div>
+                </div>
+
+                <div class="cont_total_gif">
+                    <div class="cont_titulo_gif">
+                        <h2 class= "tirulo_gif_sugerencia"></h2>
+                        <img src="Assets/close.svg" alt="">
+                    </div>
+                    <div class="cont_gif">
+                        <img class="cambio" src="#" alt="">
+                        <button  onclick="location.href = 'https://giphy.com'" class= "vermas" formtarget="_blank">Ver más</button>  
+                    </div>
+                </div>
+
+                <div class="cont_total_gif">
+                    <div class="cont_titulo_gif">
+                        <h2 class="tirulo_gif_sugerencia"></h2>
+                        <img src="Assets/close.svg" alt="">
+                    </div>
+                    <div class="cont_gif">
+                        <img class="cambio" src="#" alt="">
+                        <button  onclick="location.href = 'https://giphy.com'" class="vermas" formtarget="_blank">Ver más</button>  
+                    </div>
+                </div>
+
+                <div class="cont_total_gif">
+                    <div class="cont_titulo_gif">
+                        <h2 class ="tirulo_gif_sugerencia"></h2>
+                        <img src="Assets/close.svg" alt="">
+                    </div>
+                    <div class="cont_gif">
+                        <img class="cambio" src="#" alt="">
+                        <button  onclick="location.href = 'https://giphy.com'" class="vermas" formtarget="_blank">Ver más</button>  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cont_total_tendencias">
+            <div class="tendencias">
+                <h4 id="titulo_tendencia">Tendencias:</h4> <!--Tendencias de acá para abajo-->
+            </div>
+
+            <div class="cont_grilla_gifsTendencias" id="grilla_tendencias">
+                
+            </div>
+
+
+        </section>
+
+    </main>
+
+  
+    <script src="Javascript/JsMain.js"></script>
+</body>
+</html>

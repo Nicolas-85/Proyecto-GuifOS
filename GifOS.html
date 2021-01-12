@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear GifOS</title>
+    <link rel="stylesheet" href="Styles/StyleCrearGuifOS.css">
+    <link rel="stylesheet" href="Styles/StyleMain.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body onload="cargaBody()">
+<!--Es el mismo encabezado de la pantalla principal-->
+    <header class="header_crear_gifos">
+        <h1>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h1>
+    </header>
+<!--La barra de navegación es la misma que la pantalla ppal, sólo que le quito los botones.-->
+    <nav class="barra_navegacion_principal-con_botones">
+        <div class="logo_botonhome_crearGif">
+            <img onclick="location.href='http://127.0.0.1:5500/index.html'" class="crear_gifos_boton_retorno" src="Assets/arrow.svg" alt="">
+            
+            <img src="Assets/gifOF_logo.png" alt="Hubo un problema al cargar la imagen">
+        </div>
+    </nav> 
+<!--Arranca el cuadro explicativo para crear gifos.-->
+    <section class="cont_total_crearGifos">
+        <div id="capturaUno" class="divUno cont_captura">
+            <div class="hDos">
+                <h2>Crear Guifos</h2>
+            </div>
+            <div class="titulo_gifs_propios">
+                <img src="Assets/window img.png" alt="Error al cargar imagen">
+                <h3>Aquí podrás crear tus propios guifos</h3>
+            </div>
+            <div class="cont_parrafo">
+                <p>Crear tu <strong>guifo</strong> es muy fácil, graba cualquir imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+                <br>
+                <p><strong> 1) </strong>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</p><br>
+                <p><strong> 2) </strong>Capturar tu momento guifo</p><br>
+                <p><strong> 3) </strong>Revisar el momento</p><br>
+                <p><strong> 4) </strong>Listo para subir y compartir!</p><br>
+                <p>¿Quieres comenzar a crear tu <strong> guifo </strong>ahora?</p>
+            </div>
+            <div class="barra_botones">
+                <button onclick="location.href='http://127.0.0.1:5500/index.html'">Cancelar</button>
+                <button class="btnComenzar" onclick="comenzarGuifos()">Comenzar</button>
+            </div>
+        </div>
+        <div id="capturaDos" class="divDos cont_captura">
+            <div class="hDos">
+                <h2>Un Chequeo Antes de Empezar</h2>
+            </div>
+            <div class="cuadroVideo">
+                <video id="primerVideo" src="#"></video>
+            </div>
+            <div class="barra_botones">
+                <span class="img_camara"><img src="Assets/camera.svg" alt=""></span>
+                <button class="btnCapturar" onclick="grabar()">Capturar</button>
+            </div>
+        </div>
+        <div id="capturaTres" class="divTres cont_captura">
+            <div class="hDos">
+                <h2>Capturando Tu Guifo</h2>
+            </div>
+            <div class="cuadroVideo">
+                <video id="grabacionVideo" src="#">im</video>
+                <img id="mi_guifo" src="#" alt="">
+            </div>
+            <div id="contBtnListo" class="barra_botones_grabar">
+                <div class="cont_reloj">
+                    <p class="reloj">00:00:03:06</p>
+                </div>
+                <div class="cont_btnListo">
+                    <span class="imgListo"><img src="Assets/recording.svg" alt=""></span>
+                    <button class="btnListo" onclick="mostrarGuifo()">Listo</button>
+                </div>
+            </div>
+            <div id="btnSubirGuifos" class="barra_botones">
+                <div class="cont_reloj">
+                    <p class="reloj">00:00:03:06</p>
+                </div>
+                <div>
+                    <button onclick="location.href='http://127.0.0.1:5500/GifOS.html'">Repetir Captura</button>
+                    <button class="btnComenzar" onclick="fcnBtnSubir()">Subir Guifo</button> 
+                </div>
+             </div>
+        </div>
+        <div id="capturaCuatro" class="divCuatro cont_captura">
+            <div class="hDos">
+                <h2>Subida Guifo</h2>
+            </div>
+            <div class="cuadroVideo">
+                <img class="imgGlobo" src="Assets/globe_img.png" alt=""> 
+                <h3>Estamos subiendo tu guifo...</h3><br>
+                <div class="barra_carga">
+                    <div id="barra" class="barra_rosa"></div> <!--clases: inicio final-->
+                </div> <!--agregar un div con otra clase para la parte rosa de la barra de carga!-->
+                <p>Tiempo restante <s>38 años</s> algunos minutos</p>
+            </div>
+            <div class="barra_botones">
+                <button onclick="location.href='http://127.0.0.1:5500/GifOS.html'">Cancelar</button> <!--onclick="abortarFetch()"-->
+            </div>
+        </div>
+        <div id="capturaCinco" class="divUno divCinco cont_captura">
+            <div class="hDos">
+                <h2>Guifo Subido Con Éxito</h2>
+            </div>
+                <div class="cont_imgBtn">
+                    <div class="cont_gifPropio">
+                        <img id="contMiGuifo"  src="#" alt="">
+                    </div>
+                    <div class="cont_textoBtnSubida">
+                        <h3>Guifo creado con éxito</h3>
+                        <button onclick="copiarUrl()">Copiar enlace Guifo</button>
+                        <button onclick="descargarGif()">Descargar Guifo</button>
+                    </div>
+                </div>
+            <div class="barra_botones">
+                <button onclick="location.href='http://127.0.0.1:5500/GifOS.html'">Listo</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cont_total_tendencias">
+        <div class="tendencias">
+            <h4>Mis guifos</h4>
+        </div>
+        <div class="cont_grilla_gifsTendencias" id="misguifos">
+
+        </div>
+    </section>
+
+</section>
+<script src="Javascript/CrearGuifo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+
+</body>
+</html>
